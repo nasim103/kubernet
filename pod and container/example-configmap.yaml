@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: configMap 
+metadata:
+  name: player-pro-demo
+data:
+ player_lives: "5"
+ properties_file_name: "userinterface.properties"
+ base.properties: |
+  enemy.types=aliens,monster
+  player.maximum.lives=10
+ userinterface.properties: |
+  color.good=purple
+  color.bad=yellow
+  allow.text=true
