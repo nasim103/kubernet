@@ -11,7 +11,7 @@ spec:
           memory: "128Mi"
           cpu: "250m"
       args:
-        - /bin/bash
+        - /bin/sh
         - c
         - touch /tmp/health; sleep 60; rm -rf /tmp/health; sleep 60
       livenessProbe:
