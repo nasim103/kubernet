@@ -12,7 +12,7 @@ spec:
           cpu: "250m"
       args:
         - /bin/sh
-        - c
+        - -c
         - touch /tmp/health; sleep 60; rm -rf /tmp/health; sleep 60
       livenessProbe:
           exec:
