@@ -14,7 +14,7 @@ spec:
         - /bin/bash
         - c
         - touch /tmp/health; sleep 60; rm -rf /tmp/health; sleep 60
-      liveness_Probe:
+      livenessProbe:
           exec:
             command:
               - cat 
@@ -38,7 +38,7 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 80
-    liveness_Probe:
+    livenessProbe:
       httpGet:
         path: /
         port: 80
