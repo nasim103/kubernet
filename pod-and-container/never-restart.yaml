@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: never-restart
+spec:
+   restartPolicy: Never
+   containers:
+     - name: never-restart
+       image: alpine
+       resources:
+         limits:
+           memory: "64Mi"
+           cpu: "200m"
+       command: ["sleep", "20"]
+
+       

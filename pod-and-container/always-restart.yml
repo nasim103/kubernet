@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: always-restart
+spec:
+  restartPolicy: Always
+  containers:
+    - name: myapp 
+      image: alpine
+      resources:
+         limits:
+           memory: "128Mi"
+           cpu: "250m"
+      command: ["sleep", "20"]
+      
