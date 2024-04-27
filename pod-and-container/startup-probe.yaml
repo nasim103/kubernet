@@ -15,4 +15,4 @@ spec:
           path: /
           port: 80
          failureThreshold: 30
-         periodSecond: 3
+         periodSeconds: 3
