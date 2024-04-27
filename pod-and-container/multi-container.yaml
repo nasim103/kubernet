@@ -10,7 +10,7 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "200m"
-      volmeMounts:
+      volumeMounts:
         - name: shared-data
           mountPath: /pod-data
       command: ["/bin/sh"]
@@ -25,6 +25,6 @@ spec:
       volumeMounts:
        - name: shared-data
          mountPath: /usr/share/nginx/html
-  vlomes:
+  volumes:
     - name: shared-data
       emptyDir: {}
