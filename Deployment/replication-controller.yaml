@@ -1,0 +1,20 @@
+apiversion: v1
+kind: ReplicationController
+metadata:
+  name: alpine-box-container
+spec:
+  replicas: 3
+  selector:
+    app: alpine-box
+  template:
+    metadata:
+      name: alpine-box
+      labels:
+        app: alpine-box
+    spec:
+      containers:
+        - name: alpine
+          image: alpine 
+          ports:
+            - containerPort: 80
+          command: ["sleep", "3600"]
