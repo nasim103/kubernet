@@ -8,7 +8,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchExpression: 
+    matchExpressions: 
      - {key: tier, operator: In, values: [frontend]}
   template:
     metadata:
