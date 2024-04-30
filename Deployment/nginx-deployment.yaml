@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metatdata:
+  name: nginx-server
+  labels:
+    app: myapp
+    env: experiment
+    type: etl
+spec:
+  template:
+    metadata:
+      name: nginx-server
+      labels:
+        app: myapp
+        env: experiment
+        type: etl
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          resources:
+            limits:
+              cpu: 200m
+              memory: 164Mi
+  replicas: 3
+  selector:
+    matchLabels:
+      type: etl
