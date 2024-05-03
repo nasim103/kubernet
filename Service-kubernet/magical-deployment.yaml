@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magical-nginx
+spec:
+  selector:
+    matchLabels:
+      app: magical-nginx
+  template:
+    metadata:
+      labels:
+        app: magical-nginx
+  spec:
+      containers:
+      - name: myapp
+        image: 'anshuldevops/magicalnginx:latest'
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

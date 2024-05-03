@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-official-service
+spec:
+  selector:
+    matchLabels:
+      app: nginx-official-service
+  template:
+    metadata:
+      labels:
+        app: nginx-official-service
+    spec:
+      containers:
+      - name: nginx-official-service
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
