@@ -12,7 +12,7 @@ spec:
           memory: 128Mi
       volumeMounts:
         - name: empty-vol
-          mountpath: /data-redis
+          mountPath: /data-redis
   volumes:
     - name: empty-vol
       emptyDir: {}
