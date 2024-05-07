@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath
+spec:
+  volumes:
+    - name: hostPath-vol
+      hostpath:
+        path: /var/tmp
+  containers:
+    - name: hostpath
+      image: k8s.gcr.io/busybox'
+      command: ["/bin/sh", "-c", "echo Hello this is localhost path volume -$(date)>> /output/temp.txt"]
+      resources:
+        limits:
+          cpu: 200m
+          memory: 128Mi
+      volumeMount:
+        - name: hostPath-vol
+          mountPath: /output
+       
+          
