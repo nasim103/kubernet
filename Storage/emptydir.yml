@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: empty-volume-pod
+spec:
+  containers:
+    - name: empty-volume-pod
+      image: redis
+      resources:
+        limits:
+          cpu: 200m
+          memory: 128Mi
+      volumeMounts:
+        - name: empty-vol
+          mountpath: /data-redis
+  volumes:
+    - name: empty-vol
+      emptyDir: {}
